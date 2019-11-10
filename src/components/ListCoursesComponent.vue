@@ -24,6 +24,7 @@
         </tbody>
         <div class="row">
     <button class="btn btn-success" v-on:click="addCourseClicked()">Add</button>
+    <button class="btn btn-skills" v-on:click="addCourseClicked()">To Skills</button>
 </div>
       </table>
     </div>

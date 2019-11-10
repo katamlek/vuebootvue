@@ -26,6 +26,7 @@
         </tbody>
         <div class="row">
           <button class="btn btn-success" v-on:click="addSkillClicked()">Add</button>
+          <button class="btn btn-warning" v-on:click="viewConsultants()">View Available Consultants</button>
         </div>
       </table>
     </div>
@@ -61,6 +62,9 @@
       addSkillClicked() {
         this.$router.push(`/skills/-1`);
       },
+      viewConsultants() {
+        this.$router.push(`/consultants`)
+      }
     },
     created() {
       this.refreshSkills();
