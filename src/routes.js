@@ -9,17 +9,27 @@ const router = new Router({
     {
       path: "/",
       name: "Home",
-      component: () => import("./components/ListCoursesComponent")
+      component: () => import("./components/ListConsultantsComponent")
     },
     {
-      path: "/courses",
-      name: "Courses",
-      component: () => import("./components/ListCoursesComponent")
+      path: "/consultants",
+      name: "Consultants",
+      component: () => import("./components/ListConsultantsComponent")
     },
     {
-      path: "/courses/:id",
-      name: "Course Details",
-      component: () => import("./components/CourseComponent")
+      path: "/consultants/:id",
+      name: "Consultant Details",
+      component: () => import("./components/ConsultantComponent")
+    },
+    {
+      path: "/skills",
+      name: "Skills",
+      component: () => import("./components/ListSkillsComponent")
+    },
+    {
+      path: "/skills/:id",
+      name: "Skill Details",
+      component: () => import("./components/SkillComponent")
     }
   ]
 });
