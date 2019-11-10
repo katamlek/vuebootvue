@@ -11,6 +11,25 @@
           <label>Name</label>
           <input type="text" class="form-control" v-model="name">
         </fieldset>
+
+        <div class="container">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Level</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="skill in skills" v-bind:key="skill.id">
+              <td>{{skill.id}}</td>
+              <td>{{skill.name}}</td>
+              <td>{{skill.level}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
         <button class="btn btn-success" type="submit">Save</button>
       </form>
     </div>
@@ -24,7 +43,8 @@ export default {
   data() {
     return {
       name: "",
-      errors: []
+      errors: [],
+      skills: []
     };
   },
   computed: {
@@ -36,6 +56,7 @@ export default {
     refreshConsultantDetails() {
         consultantDataService.retrieveConsultant(this.id).then(res => {
           this.name = res.data.name;
+          this.skills = consultantDataService.retrieveConsultantSkills(this.id);
         });
     },
         validateAndSubmit(e) {

@@ -23,7 +23,10 @@ class ConsultantDataService {
     createConsultant(consultant) {
         return axios.post(`${CONSULTANTS_API_URL}/consultants/`, consultant);
     }
-}
 
+    retrieveConsultantSkills(id) {
+        return axios.get(`${CONSULTANTS_API_URL}/${id}/skills`);
+    }
+}
 
 export default new ConsultantDataService();
