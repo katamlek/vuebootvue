@@ -29,7 +29,7 @@
         data() {
             return {
                 name: "",
-              level: "",
+                level: "",
                 errors: []
             };
         },
